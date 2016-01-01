@@ -1,8 +1,7 @@
 public class Cigarettes{
 	public static void main(String[] args) {
-		java.util.Scanner in = new java.util.Scanner(System.in);
-		int n = in.nextInt();
-		int k = in.nextInt();
+		int n = new java.util.Scanner(System.in).nextInt();
+		int k = new java.util.Scanner(System.in).nextInt();
 		int x = 0, total = n;
 		while(true){
 			x = n / k;
