@@ -1,14 +1,18 @@
 #include <stdio.h>
+
+int input(char message[]){
+	int x;
+	printf("%s", message);
+	scanf("%d", &x);
+	return x;
+}
+
 int main(){
-	printf("Enter number of test cases: ");
-	int testCases = 0, number = 0, butts = 0, count = 0, i;
-	scanf("%d", &testCases);
+	int testCases = input("Enter number of test cases: "), number, butts, count, i;
 
 	for(i = 0; i < testCases; i = i + 1){
-		printf("Enter number of cigarettes: ");
-		scanf("%d", &number);
-		printf("Enter number of butts: ");
-		scanf("%d", &butts);
+		number = input("Enter number of cigarettes: ");
+		butts = input("Enter number of butts: ");
 		count = number;
 		while(number >= butts){
 			count += number / butts;
