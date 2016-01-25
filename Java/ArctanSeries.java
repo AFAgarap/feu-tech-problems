@@ -6,16 +6,11 @@ public class ArctanSeries{
 		for(int i = 1, j = 1; i < k; i++, j+=2){
 			if(i == 1){
 				answer -= Math.pow(x, (j + 2)) / (j + 2);
-				// 0.5 - 0.5^3 / 3 = .458333
 			}else if(i % 2 == 0){
 				answer += Math.pow(x, j + 2) / (j + 2);
-				// 0.458333 + 
 			}else if(i % 2 != 0){
 				answer -= Math.pow(x, j + 2) / (j + 2);
-				System.out.print("else if (odd): ");
 			}
-			System.out.println(answer);
-			System.out.println("j: " + j);
 		}
 		System.out.println("Answer: " + answer);
 	}
