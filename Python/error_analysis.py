@@ -40,23 +40,22 @@ def get_approximate_value(x, y, opt):
 	if they are restricted to four
 	floating point digits only
 	'''
-	regular_expression = r'[\d]+[.][\d][\d][\d][\d]'
+	regular_expression = r'[\d]+[.][\d][\d][\d][\d]|[\d]+[.][\d][\d][\d]|[\d]+[.][\d][\d]|[\d]+[.][\d]|[\d]+'
+	#regular_expression = r'[\d]+[.][\d][\d][\d][\d]'
 	x = re.findall(regular_expression, str(x))
 	y = re.findall(regular_expression, str(y))
+	print(x)
+	print(y)
 	approximate_value = get_value(float(x[0]), float(y[0]), opt)
 	return approximate_value
 
 def get_error(true_value, approximate_value):
-	'''
-	Gets the error value
-	'''
+	"Gets the error value"
 	error = abs(true_value - approximate_value)
 	return error
 
 def get_relative_error(true_value, approximate_value):
-	'''
-	Gets the relative error
-	'''
+	"Gets the relative error"
 	relative_error = (abs(true_value - approximate_value) / abs(true_value))
 	return relative_error
 
@@ -65,13 +64,13 @@ def main():
 	x = expression[0]; y = expression[1]; opt = expression[2]
 
 	# for chop() value
-	approximate_value = get_approximate_value(x, y, opt)
+	approximate_value = get_approximate_value(float('{0:.4f}'.format(x)), float('{0:.4f}'.format(y)), opt)
 	
 	# for true value
 	true_value = get_value(x, y, opt)
 	
 	# for round() value
-	round_approximate_value = get_approximate_value(round(x, 4), round(y, 4), opt)
+	round_approximate_value = get_approximate_value(round(float('{0:.4f}'.format(x)), 4), round(float('{0:.4f}'.format(y)), 4), opt)
 
 	# for chop() and true value
 	error = get_error(true_value, approximate_value)
@@ -83,6 +82,6 @@ def main():
 
 	print("Error for chop():\n\tError: ",error,"\tRelative Error:",relative_error)
 	print("Error for round():\n\tError: ",round_error,"\tRelative Error",round_relative_error)
-	os.system('pause')
+#	os.system('pause')
 
 main()	# Call the main method
