@@ -82,6 +82,6 @@ def main():
 
 	print("Error for chop():\n\tError: ",error,"\tRelative Error:",relative_error)
 	print("Error for round():\n\tError: ",round_error,"\tRelative Error",round_relative_error)
-#	os.system('pause')
+#	os.system('pause')	# For Windows OS only
 
 main()	# Call the main method
