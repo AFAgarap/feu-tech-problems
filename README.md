@@ -4,3 +4,4 @@ It's fun to solve them using different programming languages instead of using ju
 
 * Update 02.20.2016 -- There are problem solutions in this repository that are not for the problems in the FEU Tech Java Fest 2015
 * Update 04.07.2016 -- Code snippets from my side projects were included: vending_machine.py & gmail_check.py
+* Update 04.17.2016 -- Program for my Numerical Analysis (04065) subject: error_analysis.py
