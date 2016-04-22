@@ -6,3 +6,4 @@ It's fun to solve them using different programming languages instead of using ju
 * Update 04.07.2016 -- Code snippets from my side projects were included: vending_machine.py & gmail_check.py
 * Update 04.17.2016 -- Program for my Numerical Analysis (04065) subject: error_analysis.py
 * Issue  04.21.2016 -- Precision numbers of operands causes an issue with the results of error_analysis.py
+* Sol'n. 04.22.2016 -- Possible solution for the issue (04.21.2016): round(float("%.4f" % (float("%.4f" % (x)) - y)), 4)
