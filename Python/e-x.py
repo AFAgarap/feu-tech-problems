@@ -1,3 +1,5 @@
+from factorial import factorial
+
 def main():
 	print("\t\t\t10th degree of Maclaurin Series, e^x")
 
@@ -7,8 +9,5 @@ def main():
 		answer += (x ** i) / factorial(i)
 		i += 1
 	print(answer)
-
-def factorial(number):
-	return 1 if (number == 0) else number * factorial(number - 1)
 
 main()
