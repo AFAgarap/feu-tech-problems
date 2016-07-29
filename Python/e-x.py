@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# Maclaurin series for e^x
 from factorial import factorial
 
 def main():
