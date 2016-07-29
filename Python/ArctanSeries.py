@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# Maclaurin Series for Arctan
 def main():
 	x = input("Enter x: ")
 	k = input("Enter k: ")
