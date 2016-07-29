@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# Maclaurin series for cos(x)
 from factorial import factorial
 
 def main():
