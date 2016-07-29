@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # Maclaurin Series for Arctan
+# arctan(x) = x - x ** 3 / 3 + x ** 5 / 5 ...
 def main():
 	x = input("Enter x: ")
 	k = input("Enter k: ")
