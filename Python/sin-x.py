@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# Maclaurin series for sin(x)
 def main():
 	print("\t\t\t10th degree of Maclaurin series, sin(x)")
 	x = float(input("Enter value of x: "))
