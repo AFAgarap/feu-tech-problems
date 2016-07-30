@@ -1,3 +1,4 @@
+// Maclaurin series for cos(x)
 #include <iostream>
 #include <cmath>
 
