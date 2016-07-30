@@ -1,3 +1,4 @@
+// Maclaurin series for arctan(x)
 #include <iostream>
 #include <string>
 #include <math.h>
