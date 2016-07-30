@@ -1,3 +1,4 @@
+// problem from https://www.hackerearth.com/problem/algorithm/kriti-and-her-birthday-gift/
 #include <iostream>
 #include <string>
 

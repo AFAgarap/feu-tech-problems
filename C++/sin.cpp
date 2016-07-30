@@ -1,3 +1,4 @@
+// Maclaurin series for sin(x)
 #include <iostream>
 #include <cmath>
 

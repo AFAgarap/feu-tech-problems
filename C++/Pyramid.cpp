@@ -1,3 +1,4 @@
+// Prints number pyramid from 1-9
 #include <iostream>
 int main(){
 	for (int i = 1; i <= 10; i++){

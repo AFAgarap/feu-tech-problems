@@ -1,3 +1,7 @@
+/*
+	If n is odd or if n is even and in between 6 and 20 (inclusive), print "Weird"
+	If n is even and in between 2 and 5 (inclusive) or if n is even and > 20, print "Not Weird"
+*/
 #include <iostream>
 int main(){
 	int n = 0;
