@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# Problem from https://www.hackerearth.com/problem/algorithm/kriti-and-her-birthday-gift/
 number_string = int(input())
 
 strings = []
