@@ -12,7 +12,11 @@ for index in range(0, size):
 		]
 	)
 
-jobs.sort()
+job = [jobs[0]]
+jobs.remove(jobs[0])
+job += sorted(jobs, key=lambda x: x[1])
+jobs.clear()
+jobs = job
 
 for index in range(0, len(jobs)):
 	if (index == 0):
@@ -28,17 +32,12 @@ for index in range(0, len(jobs)):
 		jobs[index].append(jobs[index][2] - jobs[index][0])
 
 for index in range(0, len(jobs)):
-	if (index == 0):
-		print(jobs[index][2], end="")
-		for index2 in range(0, jobs[index][3] - jobs[index][2]):
-			print(" - ", end="")
-		print(jobs[index][3]," ", end="")
-	elif (jobs[index][2] == jobs[index - 1][3]):
+	if (jobs[index][2] == jobs[index - 1][3]):
 		for index2 in range(0, jobs[index][3] - jobs[index - 1][3]):
 			print(" - ", end="")
 		print(jobs[index][3]," ", end="")
-	else:
-		print(jobs[index][2])
+	elif (jobs[index][2] != jobs[index - 1][3] or i == 0):
+		print(jobs[index][2], end="")
 		for index2 in range(0, jobs[index][3] - jobs[index][2]):
 			print(" - ", end="")
 		print(jobs[index][3]," ", end="")
