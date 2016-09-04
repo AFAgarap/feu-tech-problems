@@ -12,11 +12,7 @@ for index in range(0, size):
 		]
 	)
 
-job = [jobs[0]]
-jobs.remove(jobs[0])
-job += sorted(jobs, key=lambda x: x[1])
-jobs.clear()
-jobs = job
+jobs.sort()
 
 for index in range(0, len(jobs)):
 	if (index == 0):
