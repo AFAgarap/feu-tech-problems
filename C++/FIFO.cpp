@@ -1,6 +1,83 @@
+/*
+*	Author : A.F. Agarap
+*	First-In, First-out algorithm
+*/
+
+
 #include <iostream>
 #include <sstream>
 #include <string>
+
+int input(std::string message);
+std::string concat(std::string message, int number);
+
+int main(){
+	int temp, size = input("How many processes will you enter? ");
+
+	int process[size][7];
+
+	for (int i = 0; i < size; i++) {
+		process[i][0] = input("Enter process number: ");
+		process[i][1] = input(concat("Enter arrival time for job #", process[i][0]));
+		process[i][2] = input(concat("Enter service time for job #", process[i][0]));
+		std::cout << "================================" << std::endl;
+	}
+
+	for (int i = 1; i < size; i++) {
+		if (process[i - 1][1] > process[i][1]) {
+			temp = process[i][1];
+			process[i][1] = process[i - 1][1];
+			process[i - 1][1] = temp;
+
+			temp = process[i][2];
+			process[i][2] = process[i - 1][2];
+			process[i - 1][2] = temp;
+
+			temp = process[i][0];
+			process[i][0] = process[i - 1][0];
+			process[i - 1][0] = temp;
+		}
+	}
+	
+	for (int i = 0; i < size; i++) {
+		if (i == 0) {
+			process[i][3] = process[i][1];
+		} else {
+			process[i][3] = (process[i - 1][4] > process[i][1]) ? process[i - 1][4] : process[i][1];
+		}
+		process[i][4] = process[i][3] + process[i][2];
+	}
+
+	for (int i = 0; i < size; ++i) {
+		if (i == 0 && process[i][1] == 0) {
+			process[i][5] = process[i][1];
+			
+		} else {
+			process[i][5] = process[i][3] - process[i][1];
+		}
+	}
+
+	for (int i = 0; i < size; i++) {
+		process[i][6] = process[i][4] - process[i][1];
+	}
+
+	for (int i = 0; i < size; i++) {
+		std::cout << "P #" << process[i][0] << "\tAT : " << process[i][1] << "\tBT : " << process[i][2] << "\tST : " << process[i][3] << "\tFT : " << process[i][4] << "\tWT : " << process[i][5] << "\tTAT : " << process[i][6] << std::endl;
+	}	
+
+	for (int i = 0; i < size; i++) {
+		if (process[i][3] == process[i - 1][4]) {
+			for (int j = 1; j < process[i][4] - process[i - 1][4]; j++) { std::cout << " - "; }
+			std::cout << process[i][4] << " ";
+		} else if (process[i][3] != process[i - 1][4] || i == 0) {
+			std::cout << process[i][3];
+			for (int j = 1; j < process[i][4] - process[i][3]; j++) { std::cout << " - "; }
+			std::cout << process[i][4] << " ";
+		}
+		
+	}
+	std::cout << std::endl;
+}
 
 int input(std::string message){
 	int number;
@@ -15,77 +92,4 @@ std::string concat(std::string message, int number) {
 	ss << message << number << ": ";
 	s = ss.str();
 	return s;
-}
-
-int main(){
-	int temp, size = input("How many processes will you enter? ");
-
-	int process[size], arrivalTime[size], burstTime[size], startTime[size], finishedTime[size], waitingTime[size];
-
-	for (int i = 0; i < size; i++) {
-		process[i] = input("Enter process number: ");
-	}
-
-	for (int i = 0; i < size; i++) {
-		arrivalTime[i] = input(concat("Enter arrival time for process number ", process[i]));
-	}
-
-	for (int i = 0; i < size; i++) {
-		burstTime[i] = input(concat("Enter burst time for process number ", process[i]));
-	}
-
-	for(int i = 0; i < size; i++) {
-		for(int j = 0; j < size - 1; j++) {
-			if(arrivalTime[j] > arrivalTime[j + 1]) {
-				temp = arrivalTime[j];
-				arrivalTime[j] = arrivalTime[j + 1];
-				arrivalTime[j + 1] = temp;
-
-				temp = burstTime[j];
-				burstTime[j] = burstTime[j + 1];
-				burstTime[j + 1] = temp;
-
-				temp = process[j];
-				process[j] = process[j + 1];
-				process[j + 1] = temp;
-			}
-		}
-	}
-
-	for (int i = 0; i < size; i++) {
-		if (i == 0) {
-			startTime[i] = arrivalTime[i];
-		} else {
-			startTime[i] = (finishedTime[i - 1] > arrivalTime[i]) ? finishedTime[i - 1] : arrivalTime[i];
-		}
-		finishedTime[i] = startTime[i] + burstTime[i];
-	}
-
-	for (int i = 0; i < size; ++i) {
-		if (i == 0 && arrivalTime[i] == 0) {
-			waitingTime[i] = arrivalTime[i];
-		} else {
-			waitingTime[i] = startTime[i] - arrivalTime[i];
-		}
-	}
-
-	for (int i = 0; i < size; i++) {
-		std::cout << "P #" << process[i] << "\tAT : " << arrivalTime[i] << "\tBT : " << burstTime[i] << "\tST : " << startTime[i] << "\tFT : " << finishedTime[i] << "\tWT : " << waitingTime[i] << std::endl;
-	}	
-
-	for (int i = 0; i < size; i++) {
-		if (i == 0) {
-			std::cout << startTime[i];
-			for (int j = 0; j < finishedTime[i] - startTime[i]; j++) { std::cout << " - "; }
-			std::cout << finishedTime[i] << " ";
-		} else if (startTime[i] == finishedTime[i - 1]) {
-			for (int j = 0; j < finishedTime[i] - finishedTime[i - 1]; j++) { std::cout << " - "; }
-			std::cout << finishedTime[i] << " ";
-		} else {
-			std::cout << startTime[i];
-			for (int j = 0; j < finishedTime[i] - startTime[i]; j++) { std::cout << " - "; }
-			std::cout << finishedTime[i] << " ";
-		}
-	}
-	std::cout << std::endl;
 }
