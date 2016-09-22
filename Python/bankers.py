@@ -7,7 +7,8 @@ letters = list(ascii_uppercase)
 def main():
 	available_instance = []
 	origin_available_instance = []
-	process = []	
+	process = []
+
 	total_allocation = []
 	total_resources = []
 
@@ -78,16 +79,12 @@ def get_total_allocation(process=[], size=0, number_of_resources=0):
 	return total_allocation
 
 def get_available_instance(total_resources=[], total_allocation=[], number_of_resources=0):
-	available_instance = []
-	for resource_number in range(0, number_of_resources):
-		available_instance.append(total_resources[resource_number] - total_allocation[resource_number])
+	available_instance = list([abs(rn_total_resources - rn_total_allocation) for rn_total_resources, rn_total_allocation in zip(total_resources, total_allocation)])
 	return available_instance
 
 def get_process_need(process=[], size=0, number_of_resources=0):
-	need = []
 	for index in range(0, size):
-		for resource_number in range(0, number_of_resources):
-			need.append(process[index][0][resource_number] - process[index][1][resource_number])
+		need = list([abs(rn_max_alloc - rn_current_alloc) for index, rn_max_alloc, rn_current_alloc in zip(process, process[index][0], process[index][1])])
 		process[index].append(need)
 		need = []
 	return process
