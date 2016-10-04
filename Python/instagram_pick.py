@@ -1,9 +1,10 @@
 import os
 import re
 import requests
+import urllib.request
 from bs4 import BeautifulSoup
 
-def fetch_image(url):
+def fetch_image(url, filename):
 	response = requests.get(url)
 	html = response.content
 	soup = BeautifulSoup(html, 'html.parser')
@@ -20,8 +21,9 @@ def fetch_image(url):
 			jpg = line; break
 
 	match = re.search('(?<=")(.+)(?<=")(\s)', jpg)
-	os.system('firefox "{}'.format(match.group()))
-#	os.system('wget "{}'.format(match.group()))	# for Linux only
+	jpg_url = match.group()
+	urllib.request.urlretrieve(jpg_url, '{}.jpg'.format(filename))
+	print('Success' if os.path.isfile('{}.jpg'.format(filename)) else 'Failed')
 
 if __name__ == '__main__':
-	fetch_image(input("Enter URL: "))
+	fetch_image(input("Enter URL: "), input("Enter a filename for the photo: "))
