@@ -23,8 +23,14 @@ def set_processes(size):
 def get_cycles(process, quantum):
     cycles = []
     for index in range(0, len(process)):
-        cycles.append(math.ceil((process[index][1] / quantum) + (process[index][1] % quantum)))
+        cycles.append(math.floor((process[index][1] / quantum) + (process[index][1] % quantum)))
     return cycles
+
+def get_queue(process, cycles):
+	queue = []
+	for index in range(0, cycles):
+		for element in range(0, len(process)):
+			pass
 
 if __name__ == '__main__':
     main()
