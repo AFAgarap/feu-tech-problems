@@ -3,6 +3,7 @@
 import math
 
 def main():
+    import os; os.system('clear')
     # quantum = int(input("Enter time quantum: "))
     # size = int(input("How many processes will you enter? "))
     # process = set_processes(size)
@@ -27,56 +28,34 @@ def get_cycle(process, quantum):
 
 def get_queue(process, cycle, quantum):
     queue = []
-    index = 0
-    while (process != 0):
-        if not queue:
-            queue.append(process[index][0])
-            result = get_finished_time(burst_time=process[index][1], quantum=quantum, starting_time=queue[index])
-            process[index][1], finished_time, state = result[0], result[1], result[2]
-            if state == False: process.pop(index)
-            queue[index] = [queue[index], finished_time]
-            print(process); print(queue)
-        elif queue:
-            if (process[0][0] <= queue[index - 1][1]):
-                queue.append(queue[index - 1][1])
-                result = get_finished_time(burst_time=process[0][1], quantum=quantum, starting_time=queue[index])
-                process[0][1], finished_time, state = result[0], result[1], result[2]
-                if state == False: process.pop()
-                queue[index] = [queue[index], finished_time]
-                print(process); print(queue)
-            elif (process[0][0] > queue[index - 1][1]):
-                queue.append(process[0][0])
-                print(queue)
-                result = get_finished_time(burst_time=process[0][1], quantum=quantum, starting_time=queue[index])
-                process[0][1], finished_time, state = result[0], result[1], result[2]
-                if state == False: process.pop()
-                queue[index] = [queue[index], finished_time]
-                print(process); print(queue)
-        index += 1
-    # for index in range(0, cycle):
-    #     for element in range(0, len(process)):
-    #         if not queue:
-    #             queue.append(process[element][0])
-    #             result = get_finished_time(burst_time=process[element][1], quantum=quantum, starting_time=queue[index])
-    #             process[element][1], finished_time, state = result[0], result[1], result[2]
-    #             if state == False: process.pop(element)
-    #             queue[index] = [queue[index], finished_time]
-    #         elif queue:
-    #             if (process[element][0] <= queue[element - 1][1]):
-    #                 print(element)
-    #             elif (process[index][0] > queue[index - 1][1]):
-    #                 pass
+    for index in range(0, cycle):
+        for element in range(0, len(process)):
+            if not queue:
+                queue.append(process[element][0])
+                result = get_finished_time(burst_time=process[element][1], quantum=quantum, starting_time=queue[element])
+                process[element][1], finished_time = result[0], result[1]
+                queue[element] = [queue[element], finished_time]
+            elif queue:
+                if (process[element][0] <= queue[element - 1][1]):
+                    queue.append(queue[element - 1][1])
+                    result = get_finished_time(burst_time=process[element][1], quantum=quantum, starting_time=queue[element])
+                    process[element][1], finished_time = result[0], result[1]
+                    queue[element] = [queue[element], finished_time]
+                elif (process[element][0] > queue[element - 1][1]):
+                    queue.append(process[element][0])
+                    result = get_finished_time(burst_time=process[element][1], quantum=quantum, starting_time=queue[element])
+                    process[element][1], finished_time = result[0], result[1]
+                    queue[element] = [queue[element], finished_time]
     return process, queue
 
 def get_finished_time(burst_time, quantum, starting_time):
-    finished_time = 0
     if burst_time >= quantum:
         finished_time = starting_time + quantum
         burst_time -= quantum
     elif burst_time < quantum and burst_time != 0:
         finished_time = starting_time + burst_time
         burst_time -= burst_time
-    return burst_time, finished_time, (False if burst_time == 0 else True)
+    return burst_time, finished_time
 
 if __name__ == '__main__':
     main()
