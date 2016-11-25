@@ -12,7 +12,9 @@ def main():
     process = [ [7, 9], [4, 4], [6, 3], [1, 2] ]
     process.sort()
     cycle = get_cycle(process[-1][1], quantum)
-    print(get_queue(process=process, cycle=cycle, quantum=quantum, size=size))
+    process, queue = get_queue(process=process, cycle=cycle, quantum=quantum, size=size)
+    print(process)
+    print(queue)
 
 def set_processes(size):
     process = []
@@ -42,21 +44,19 @@ def get_queue(process, cycle, quantum, size):
                 	# set_starting_time(queue, process[element][0])
                 	starting_time = process[element][0]
             elif queue and queue.__len__() >= size:
-            	starting_time = queue[-1][1] if index == 1 else queue[element - 1][1]
-            	print("e:",element)
+            	# starting_time = queue[-1][1] if index == 1 else queue[element - 1][1]
+            	# print("e:",element)
             	if process[element][1] == 0:
             		continue
             	elif process[element][1] != 0:
-            		set_starting_time(queue, starting_time)
+	            	starting_time = queue[-1][1] if index == 1 else queue[queue.__len__() - 1][1]
+            		# set_starting_time(queue, starting_time)
             # result = get_finished_time(burst_time=process[element][1], quantum=quantum, starting_time=queue[element])
             result = get_finished_time(burst_time=process[element][1], quantum=quantum, starting_time=starting_time)
             process[element][1], finished_time = result[0], result[1]
             # queue[element] = [queue[element], finished_time]
             
             queue.append([starting_time, finished_time])
-            print(process)
-            print(queue)
-            print()
     return process, queue
 
 def set_starting_time(queue, starting_time):
@@ -65,7 +65,6 @@ def set_starting_time(queue, starting_time):
 
 def get_finished_time(burst_time, quantum, starting_time):
     finished_time = 0
-    print("s:",starting_time)
     if burst_time >= quantum:
         finished_time = starting_time + quantum
         burst_time -= quantum
