@@ -34,15 +34,17 @@ int main() {
 			6 < 8 :					([3] < [2])
 	*/
 
-	for (int index = 1; index < size; index++) {
-		if (process[index - 1][1] > process[index][1]) {
-			temp = process[index][1];
-			process[index][1] = process[index - 1][1];
-			process[index - 1][1] = temp;
+	for (int index = 0; index < size - 1; index++) {
+		for (int j = 0; j < size - index - 1; j++) {
+			if (process[j][1] > process[j + 1][1]) {
+				temp = process[j][1];
+				process[j][1] = process[j + 1][1];
+				process[j + 1][1] = temp;
 
-			temp = process[index][0];
-			process[index][0] = process[index - 1][0];
-			process[index - 1][0] = temp;
+				temp = process[j][0];
+				process[j][0] = process[j + 1][0];
+				process[j + 1][0] = temp;
+			}
 		}
 	}
 
