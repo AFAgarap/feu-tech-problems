@@ -32,13 +32,10 @@ def get_queue(process, cycle, quantum, size):
     queue = []
     for index in range(0, cycle):
         for element in range(0, len(process)):
-            if not queue:
+            if not queue or (queue and queue.__len__() < size and process[element][0] > queue[element - 1][1]):
                 starting_time = process[element][0]
-            elif queue and queue.__len__() < size:
-                if (process[element][0] <= queue[element - 1][1]):
-                	starting_time = queue[element - 1][1]
-                elif (process[element][0] > queue[element - 1][1]):
-                	starting_time = process[element][0]
+            elif queue and queue.__len__() < size and process[element][0] <= queue[element - 1][1]:
+            	starting_time = queue[element - 1][1]
             elif queue and queue.__len__() >= size:
             	if process[element][1] == 0:
             		continue
