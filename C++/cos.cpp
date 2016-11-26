@@ -22,5 +22,9 @@ int main(){
 }
 
 int factorial(int n){
-	return (n == 0) ? 1 : n * factorial(n - 1);
+	if (n > 1) {
+		return n * factorial(n - 1);
+	} else {
+		return 1;
+	}
 }
