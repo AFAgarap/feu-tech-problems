@@ -11,22 +11,22 @@ for index in range(0, size):
 	jobs.append(
 		[
 			(int(input("Enter arrival time for job #{}: ".format(index + 1)))),
-			(int(input("Enter burst time for job #{}: ".format(index + 1))))
+			(int(input("Enter service time for job #{}: ".format(index + 1))))
 		]
 	)
 
-jobs.sort()
+jobs.sort(key=lambda x: x[1])
 
 for index in range(0, len(jobs)):
 	if (index == 0):
-		jobs[index].append(jobs[index][0])
+		jobs[index].append(0)
 	else:
 		jobs[index].append(jobs[index - 1][3] if (jobs[index - 1][3] > jobs[index][0]) else jobs[index][0])
 	jobs[index].append(jobs[index][2] + jobs[index][1])
 
 for index in range(0, len(jobs)):
-	if (index == 0 and jobs[index][0] == 0):
-		jobs[index].append(jobs[index][0])
+	if (index == 0):
+		jobs[index].append(0)
 	else:
 		jobs[index].append(jobs[index][2] - jobs[index][0])
 
