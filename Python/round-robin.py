@@ -36,11 +36,10 @@ def get_queue(process, cycle, quantum, size):
                 starting_time = process[element][0]
             elif queue and queue.__len__() < size and process[element][0] <= queue[element - 1][1]:
             	starting_time = queue[element - 1][1]
-            elif queue and queue.__len__() >= size:
-            	if process[element][1] == 0:
-            		continue
-            	elif process[element][1] != 0:
-	            	starting_time = queue[-1][1] if index == 1 else queue[queue.__len__() - 1][1]
+            elif queue and queue.__len__() >= size and process[element][1] != 0:
+            	starting_time = queue[-1][1] if index == 1 else queue[queue.__len__() - 1][1]
+            else:
+            	continue
             result = get_finished_time(burst_time=process[element][1], quantum=quantum, starting_time=starting_time)
             process[element][1], finished_time = result[0], result[1]
             queue.append([starting_time, finished_time])
