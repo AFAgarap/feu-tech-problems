@@ -42,10 +42,11 @@ int main(){
 	}
 	
 	for (int i = 0; i < size; i++) {
-		if (i == 0) {
+		if (i == 0 || (process[i - 1][4] < process[i][1]) && i != 0) {
 			process[i][3] = process[i][1];
 		} else {
-			process[i][3] = (process[i - 1][4] > process[i][1]) ? process[i - 1][4] : process[i][1];
+			// process[i][3] = (process[i - 1][4] > process[i][1]) ? process[i - 1][4] : process[i][1];
+			process[i][3] = process[i - 1][4];
 		}
 		process[i][4] = process[i][3] + process[i][2];
 	}
@@ -96,3 +97,4 @@ std::string concat(std::string message, int number) {
 	s = ss.str();
 	return s;
 }
+	
