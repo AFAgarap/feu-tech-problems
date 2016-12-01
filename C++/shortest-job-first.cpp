@@ -17,23 +17,6 @@ int main() {
 		std::cout << "================================" << std::endl;
 	}
 
-	// [[0, 5], [1, 3], [2, 8], [3, 6]]
-	/*
-		5 3 8 6
-			5 < 3 : swap 3 and 5	([0] < [1])
-		3 5 8 6
-			5 < 8 : as is 			([1] < [2])
-		3 5 8 6	
-		3 5 8 6
-			8 < 6 : 				([2] < [3])
-		3 5 8 6
-			6 < 3 :					([3] < [0])
-		3 5 8 6
-			6 < 5 :					([3] < [1])
-		3 5 8 6
-			6 < 8 :					([3] < [2])
-	*/
-
 	for (int index = 0; index < size - 1; index++) {
 		for (int j = 0; j < size - index - 1; j++) {
 			if (process[j][1] > process[j + 1][1]) {
@@ -48,9 +31,6 @@ int main() {
 		}
 	}
 
-	// for (int index = 0; index < size; index++) {
-	// 	std::cout << process[index][0] << " : " << process[index][1] << std::endl;
-	// }
 	for (int index = 0; index < size; index++) {
 		if (index == 0) {
 			process[index][2] = 0;
@@ -68,6 +48,7 @@ int main() {
 	for (int index = 0; index < size; index++) {
 		std::cout << process[index][0] << " : " << process[index][1] << " : " << process[index][2] << " : " << process[index][3] << " : " << process[index][4] << " : " << process[index][5] << std::endl;
 	}
+
 	return 0;
 }
 
