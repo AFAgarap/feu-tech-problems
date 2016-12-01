@@ -48,14 +48,28 @@ int main() {
 		}
 	}
 
+	// for (int index = 0; index < size; index++) {
+	// 	std::cout << process[index][0] << " : " << process[index][1] << std::endl;
+	// }
 	for (int index = 0; index < size; index++) {
-		std::cout << process[index][0] << " : " << process[index][1] << std::endl;
+		if (index == 0) {
+			process[index][2] = 0;
+		} else if (index != 0 && process[index - 1][3] < process[index][0]) {
+			process[index][2] = process[index][0];
+		} else if (index != 0 && process[index - 1][3] >= process[index][0]) {
+			process[index][2] = process[index - 1][3];
+		}
+		process[index][3] = process[index][2] + process[index][1];
+		process[index][4] = (index == 0 ) ? 0 : process[index][2] - process[index][0];
+		process[index][5] = process[index][3] - process[index][0];
 	}
 
+
+	for (int index = 0; index < size; index++) {
+		std::cout << process[index][0] << " : " << process[index][1] << " : " << process[index][2] << " : " << process[index][3] << " : " << process[index][4] << " : " << process[index][5] << std::endl;
+	}
 	return 0;
 }
-
-// [[0, 5], [1, 3], [2, 8], [3, 6]]
 
 int input(std::string message) {
 	int number;
