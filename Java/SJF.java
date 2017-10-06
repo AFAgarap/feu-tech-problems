@@ -1,3 +1,7 @@
+/**
+*	Implementation of the shortest job first scheduling algorithm.
+*/
+
 public class SJF {
 	public static void main(String[]args) {
 		int temp = 0;

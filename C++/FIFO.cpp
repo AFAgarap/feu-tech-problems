@@ -1,6 +1,6 @@
 /*
 *	Author : A.F. Agarap
-*	First-In, First-out algorithm
+*	Implementation of the first-in, first-out scheduling algorithm.
 */
 
 

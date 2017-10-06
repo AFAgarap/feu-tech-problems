@@ -1,3 +1,7 @@
+/**
+*	Implementation of the first-in, first-out scheduling algorithm.
+*/
+
 public class FIFO {
 	public static void main(String[] args) {
 		int temp = 0;
