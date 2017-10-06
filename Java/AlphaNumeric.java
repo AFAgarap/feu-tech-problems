@@ -1,5 +1,8 @@
-// Prints the given letter n times
-// Where n is the preceding number to the letter
+/**
+*	Prints the given letter n times,
+*	where n is the preceding number to the letter
+*/
+
 public class AlphaNumeric{
 	public static void main(String[] args) {
 		String line = new java.util.Scanner(System.in).next();
