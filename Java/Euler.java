@@ -1,3 +1,7 @@
+/**
+*	Euler's method for solving ordinary differential equations.
+*/
+
 public class Euler {
 	public static void main(String[] args) {
 		float x, y, m, i, dy_dx, delta_y;

@@ -1,3 +1,7 @@
+/**
+*	Maclaurin series for arctan
+*/
+
 public class ArctanSeries{
 	public static void main(String[]args){
 		double x = new java.util.Scanner(System.in).nextDouble();
