@@ -25,7 +25,7 @@ for index in range(len(plain_text)):
 		# matches the letter in the alphabet list
 		if plain_text[index] == letter_set[letter_index]:
 			# implement the key for encryption
-			cipher_text += letter_set[letter_index + key]
+			cipher_text += letter_set[(letter_index + key) % len(letter_set)]
 
 # print the cipher text
 print(cipher_text)
