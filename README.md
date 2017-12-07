@@ -4,6 +4,40 @@ It's fun to solve them using different programming languages instead of using ju
 
 The word problems could be read <a href="https://github.com/AFAgarap/practice-programming-problems/blob/master/Problems.docx">here</a>.
 
+* ArctanSeries. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/ArctanSeries.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Bankers. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Bingbong. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* CaesarCipher. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Cigarette. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/cigarette.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Cosine. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/cos.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* ErrorAnalysis. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Euler. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/euler.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Exponential. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/e-x.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* FIFO. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/FIFO.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* FillingJars. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/FillingJars.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Heliocentric. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/Heliocentric.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* InstagramPick. [[Python]()]
+* Kriti. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/Kriti.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* ListComprehensionGenerator. [[Python]()]
+* NChooseK. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/NChooseK.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Notebook. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/Notebook.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Paging. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* PasscodeGenerator. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Pentagon. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* PingPongPaul. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/PingPongPaul.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* PolynomialLeastSquares. [[Python]()]
+* Pyramid. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/Pyramid.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* QuadraticSpline. [[Python]()]
+* RepeatedOne. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/repeated-one.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* RoundRobin. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* ShortestJobFirst. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/shortest-job-first.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Sine. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/sin.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* SimpleBruteforce. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Streak. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* Subsequence. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* VendingMachine. [[C]()][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+* WeirdNumber. [[C]()][[C++](https://github.com/AFAgarap/practice-programming-problems/blob/master/C%2B%2B/weirdnumber.cpp)][[Java]()][[Julia]()][[Python]()][[Ruby]()][[Shell]()]
+
 ## License
 ```
 MIT License
