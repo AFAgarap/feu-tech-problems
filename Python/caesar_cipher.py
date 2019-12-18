@@ -19,13 +19,23 @@ key = int(input("Enter key: "))
 
 # loop through the plain_text string
 for index in range(len(plain_text)):
-	# loop through the list of alphabet letters
-	for letter_index in range(len(letter_set)):
-		# checks if letter in plain_text
-		# matches the letter in the alphabet list
-		if plain_text[index] == letter_set[letter_index]:
-			# implement the key for encryption
-			cipher_text += letter_set[(letter_index + key) % len(letter_set)]
+    # loop through the list of alphabet letters
+    for letter_index in range(len(letter_set)):
+        # checks if letter in plain_text
+        # matches the letter in the alphabet list
+        if plain_text[index] == letter_set[letter_index]:
+            # implement the key for encryption
+            cipher_text = letter_set[(letter_index + key) % len(letter_set)]
+            print(
+                "{p_text} : {c_text} (({l_index} + {k}) mod {a_size} = {result})".format(
+                    p_text=plain_text[index],
+                    c_text=cipher_text,
+                    l_index=letter_index,
+                    k=key,
+                    a_size=len(letter_set),
+                    result=((letter_index + key) % len(letter_set)),
+                )
+            )
 
 # print the cipher text
 print(cipher_text)

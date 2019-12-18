@@ -16,34 +16,41 @@
 
 """Quadratic Spline Interpolation"""
 
-__version__ = '0.1.0'
-__author__ = 'Abien Fred Agarap'
+__version__ = "0.1.0"
+__author__ = "Abien Fred Agarap"
+
 
 def main():
-	
-	x = [1, 2, 3, 4, 5]; y = [3, 6, 9, 12, 15]
-	n = 4
 
-	# uncomment for user input
-	# x = []; y = []
-	# n = int(input('Enter n: '))
-	# for index in range(n):
-	# 	x.append(int(input('Enter x_{}: '.format(index))))
-	# 	y.append(int(input('Enter y_{}: '.format(index))))
-	c = list(y)
-	a = []; b = []
-	for index in range((n - 1), -1, -1):
-		a.append(c[index] - c[index - 1])
-	for index in range((n - 1), -1, -1):
-		b.append(2 * c[index - 1] - 2 * c[index])
-	a = a[::-1]
-	b = b[::-1]
-	b[-1] = 0
-	print(a)
-	print(b)
-	for index in range(n):
-		print('S_{}(x) = {} + {}x + {}x^2 for x ∈ [{}, {}]'.format(index, y[index], b[index], a[index], x[index], x[index + 1]))
+    x = [1, 2, 3, 4, 5]
+    y = [3, 6, 9, 12, 15]
+    n = 4
+
+    # uncomment for user input
+    # x = []; y = []
+    # n = int(input('Enter n: '))
+    # for index in range(n):
+    # 	x.append(int(input('Enter x_{}: '.format(index))))
+    # 	y.append(int(input('Enter y_{}: '.format(index))))
+    c = list(y)
+    a = []
+    b = []
+    for index in range((n - 1), -1, -1):
+        a.append(c[index] - c[index - 1])
+    for index in range((n - 1), -1, -1):
+        b.append(2 * c[index - 1] - 2 * c[index])
+    a = a[::-1]
+    b = b[::-1]
+    b[-1] = 0
+    print(a)
+    print(b)
+    for index in range(n):
+        print(
+            "S_{}(x) = {} + {}x + {}x^2 for x ∈ [{}, {}]".format(
+                index, y[index], b[index], a[index], x[index], x[index + 1]
+            )
+        )
 
 
-if __name__ == '__main__':
-	main()
+if __name__ == "__main__":
+    main()

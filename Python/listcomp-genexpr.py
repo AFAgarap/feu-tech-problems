@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 def main():
     # list comprehensions are greedy
     total = sum([num * num for num in range(0, 101)])
@@ -13,5 +14,6 @@ def main():
     print(id(3))
     c = 3
     print(id(c))
+
 
 main()
